@@ -1,0 +1,30 @@
+Community:
+    'community' name ID '{' 
+        communityRoles+=CommunityRole
+    '}'
+
+
+Action:
+    basicAction | SpeechAct | conditionalAction
+;
+
+Event:
+    name=SMID code=ID
+;
+
+Rule:
+    obligation | permission | prohibition 
+;
+
+
+CommunityRole:{
+    name: ID '{'
+    actions*=Action
+    deonticTokens*=DeontikToken
+    '}'
+}
+
+DeontikToken:
+    burden | embargo | permit 
+;
+
